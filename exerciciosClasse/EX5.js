@@ -37,6 +37,7 @@ const rl = readline.createInterface({
 
 
 
+
 //classes
 
 class Personagem {
