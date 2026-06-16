@@ -1,0 +1,114 @@
+<h1>Projeto</h1>
+<ul class="tree">
+    <li>
+        <span wm-folder>backend</span>
+        <ul>
+            <li>
+                <span wm-folder>app</span>
+                <ul>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span wm-folder>config</span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span wm-folder>frontend</span>
+        <ul>
+            <li>
+                <span wm-folder>public</span>
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<style>
+    /* Reseta e limpa os estilos padrão da lista */
+    ul.tree, .tree ul {
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+    }
+
+    /* Define o recuo e garante que a posição seja relativa para os ganchos */
+    .tree li {
+        margin: 0 !important;
+        padding: 6px 0 6px 20px !important;
+        position: relative !important;
+        border: none !important;
+        list-style-type: none !important;
+    }
+
+    /* Cria a linha vertical fina cinza padrão */
+    .tree ul li {
+        border-left: 1px solid rgb(100,100,100) !important;
+    }
+
+    /* Remove a linha vertical que sobra no último item da pasta */
+    .tree ul li:last-child {
+        border-left: 1px solid transparent !important;
+    }
+
+    /* Desenha a perninha horizontal de cada arquivo/pasta */
+    .tree li::before {
+        content: "" !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 12px !important;
+        height: 15px !important;
+        border-bottom: 1px solid rgb(100,100,100) !important;
+        border-top: none !important;
+        border-right: none !important;
+        border-left: none !important;
+    }
+
+    /* Faz a quina em formato de 'L' perfeita para o último item da pasta */
+    .tree ul li:last-child::before {
+        border-left: 1px solid rgb(100,100,100) !important;
+    }
+
+    /* Estilização básica e limpa para as pastas clicáveis */
+    .tree span[wm-folder] {
+        user-select: none;
+        font-weight: bold;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    /* Ajuste para alinhar as subpastas corretamente */
+    .tree ul {
+        margin-left: 5px !important;
+    }
+</style>
+
+<script>
+    document.querySelectorAll('[wm-folder]').forEach(folder => {
+        folder.onclick = function(e) {
+            console.log('Você clicou na pasta: ', folder.innerHTML);
+            
+            // Dica de ouro para a atividade: Esse código abaixo já faz 
+            // as subpastas sumirem e aparecerem quando você clica!
+            const proximoUl = folder.nextElementSibling;
+            if (proximoUl && proximoUl.tagName === 'UL') {
+                const estaEscondido = proximoUl.style.display === 'none';
+                proximoUl.style.display = estaEscondido ? 'block' : 'none';
+            }
+        }
+    });
+</script>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulario</title>
+
+    <style>
+        input,
+        textarea,
+        select {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type=radio],
+        input[type=checkbox] {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Formulario</h1>
+
+    <form action="http://localhost:3003/usuarios" method="POST">
+        <input type="hidden" name="id" value="3">
+        <input type="text" name="nome">
+        <input type="password" name="senha">
+        <textarea name="bio" cols="30" rows="10"></textarea>
+
+        <div>
+            <input type="radio" name="tipo" value="admin"> Admin
+            <input type="radio" name="tipo" value="regular"> Regular
+            <input type="radio" name="tipo" value="professor"> Professor
+        </div>
+
+        <div>
+            <input type="checkbox" name="ativo">Ativo
+        </div>
+
+        <select name="estado">
+            <option>Selecione</option>
+            <option value="ac">ACRE</option>
+            <option value="al">ALAGOAS</option>
+            <option value="ap">AMAPÁ</option>
+            <option value="am">AMAZONAS</option>
+            <option value="ba">BAHIA</option>
+            <option value="ce">CEARÁ</option>
+            <option value="df">DISTRITO FEDERAL</option>
+            <option value="es">ESPÍRITO SANTO</option>
+            <option value="go">GOIÁS</option>
+            <option value="ma">MARANHÃO</option>
+            <option value="mt">MATO GROSSO</option>
+            <option value="ms">MATO GROSSO DO SUL</option>
+            <option value="mg">MINAS GERAIS</option>
+            <option value="pa">PARÁ</option>
+            <option value="pb">PARAÍBA</option>
+            <option value="pr">PARANÁ</option>
+            <option value="pe">PERNAMBUCO</option>
+            <option value="pi">PIAUÍ</option>
+            <option value="rj">RIO DE JANEIRO</option>
+            <option value="rn">RIO GRANDE DO NORTE</option>
+            <option value="rs">RIO GRANDE DO SUL</option>
+            <option value="ro">RONDÔNIA</option>
+            <option value="rr">RORAIMA</option>
+            <option value="sc">SANTA CATARINA</option>
+            <option value="sp">SÃO PAULO</option>
+            <option value="se">SERGIPE</option>
+            <option value="to">TOCANTINS</option>
+        </select>
+
+        <div>
+            <p>Interesses:</p>
+            <label><input type="checkbox" name="Interesses[]" value="js"> JavaScript</label><br>
+            <label><input type="checkbox" name="Interesses[]" value="java"> Java</label><br>
+            <label><input type="checkbox" name="Interesses[]" value="c#"> C#</label><br>
+            <label><input type="checkbox" name="Interesses[]" value="python"> Python</label><br>
+            <label><input type="checkbox" name="Interesses[]" value="go"> Go</label>
+        </div>
+
+
+        <button type="submit">Incluir</button>
+        <button type="submit" formaction="http://localhost:3003/usuarios/3">Alterar</button>
+    </form>
+</body>
+
+</html>
