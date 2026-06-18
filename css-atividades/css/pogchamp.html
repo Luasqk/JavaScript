@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão do Google</title>
+    <style>
+        /* Estilização do Botão */
+        .btn-google {
+            display: inline-block;
+            padding: 12px 24px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: #ffffff;
+            background-color: #1a73e8; /* Azul padrão do Google */
+            text-decoration: none; /* Remove o sublinhado padrão de link */
+            border-radius: 4px; /* Cantos levemente arredondados */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+
+        /* Efeito ao passar o mouse (Hover) */
+        .btn-google:hover {
+            background-color: #1557b0; /* Um azul mais escuro */
+            box-shadow: 0 4px 6px rgba(32, 33, 36, 0.28);
+        }
+
+        /* Efeito ao clicar (Active) */
+        .btn-google:active {
+            background-color: #1c54a3;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://www.google.com" target="_blank" class="btn-google">
+        Ir para o Google
+    </a>
+
+</body>
+</html>

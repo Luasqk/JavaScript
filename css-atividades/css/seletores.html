@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        #aprovados {
+            color:#ff0;
+            background-color: #f77;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class='tag'>
+        <div class='tag'>
+            <p class='tag'>1</p>
+            <ul class='tag' feira='casa'>
+                <li>Arroz</li>
+                <li>Feijão</li>
+            </ul>
+            <ul class='tag' feira='escritorio empresa'>
+                <li>Café</li>
+                <li>Água</li>
+            </ul>
+            <ol id='aprovados' class='tag'>
+                <li>Maria</li>
+                <li>Pedro</li>
+                <li>Ana</li>
+            </ol>
+            <div id='aninhado' class='tag'>
+                <div class="tag">
+                    <section class='tag'>
+                        <span class='tag'>1</span>
+                        <p class='tag'>2</p>
+                        <span class='tag'>3</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tag.js"></script>
+
+    <style>
+    /* Define o fundo padrão para o corpo da página */
+    body {
+        background-color: paleturquoise;
+        padding: 20px;
+        font-family: sans-serif;
+    }
+
+    /* Aplica estilos gerais a todos os elementos com a classe .tag */
+    .tag {
+        border: 2px solid; /* A cor será injetada pelo seu JS */
+        padding: 15px;      /* Cria o espaçamento interno para ver o aninhamento */
+        margin: 10px 0;     /* Separa verticalmente as caixas */
+        display: block;     /* Garante que se comportem como blocos */
+        position: relative;
+    }
+
+    /* Estiliza as labels criadas pelo JavaScript */
+    .tag > label {
+        padding: 2px 6px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 12px;
+        border-radius: 3px;
+        display: inline-block;
+        margin-bottom: 8px; /* Afasta o nome da tag do conteúdo dela */
+    }
+</style>
+</body>
+
+</html>
